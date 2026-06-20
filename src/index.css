@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Premium Verdant aesthetic styles */
+body {
+  background-color: #030704;
+  color: #f1f5f3;
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism containers inspired directly by the Verdant screenshot */
+.verdant-glow-card {
+  background: rgba(10, 15, 11, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(163, 230, 53, 0.09);
+  border-top-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.7),
+    0 0 30px 0 rgba(163, 230, 53, 0.015),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+.verdant-glow-card:hover {
+  border-color: rgba(163, 230, 53, 0.18);
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.8),
+    0 0 30px 0 rgba(163, 230, 53, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Solid neon verdant action button */
+.verdant-btn-primary {
+  background: linear-gradient(105deg, #a3e635 0%, #bef264 50%, #d9f99d 100%);
+  color: #052e16;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.verdant-btn-primary:hover {
+  box-shadow: 0 0 30px rgba(163, 230, 53, 0.45);
+  transform: translateY(-1px);
+}
+
+.verdant-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.verdant-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.verdant-scroll::-webkit-scrollbar-thumb {
+  background: rgba(163, 230, 53, 0.2);
+  border-radius: 4px;
+}
+
+.verdant-input {
+  background: rgba(10, 15, 11, 0.8) !important;
+  border: 1px solid rgba(163, 230, 53, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.verdant-input:focus {
+  border-color: rgba(163, 230, 53, 0.5) !important;
+  outline: none;
+  box-shadow: 0 0 15px rgba(163, 230, 53, 0.1) !important;
+}
+
+/* ----------------------------------------------------
+   Eco Animated Background & Particle Drift Animations
+   ---------------------------------------------------- */
+@keyframes bgPanZoom {
+  0% {
+    transform: scale(1.02) translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.06) translate(10px, -8px) rotate(0.4deg);
+  }
+  50% {
+    transform: scale(1.03) translate(-4px, 12px) rotate(-0.4deg);
+  }
+  75% {
+    transform: scale(1.07) translate(-12px, -4px) rotate(0.2deg);
+  }
+  100% {
+    transform: scale(1.02) translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes particleDrift {
+  0% {
+    transform: translateY(110vh) translateX(0) scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  85% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(80px) scale(1.1) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+.animate-eco-bg {
+  animation: bgPanZoom 55s ease-in-out infinite;
+}
+
+.animate-eco-particle {
+  position: absolute;
+  bottom: -40px;
+  background: radial-gradient(circle, rgba(163,230,53,0.3) 0%, rgba(163,230,53,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  animation: particleDrift var(--drift-dur, 25s) linear infinite;
+  animation-delay: var(--drift-delay, 0s);
+}
+

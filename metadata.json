@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Carbon Footprint Tracker",
+  "description": "An interactive carbon footprint awareness platform featuring emissions calculators, live area-specific carbon ticker, streak badges, and a custom Gemini-powered AI sustainability advisor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
