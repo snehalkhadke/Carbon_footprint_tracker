@@ -1,17 +1,9 @@
-# 🌿 Carbon Footprint Tracker — Complete Build Prompt Series
+# 🌿 Carbon Footprint Tracker — Complete Build Prompts
 ### Step-by-step prompts to recreate the full project from scratch
 
 ---
 
-## HOW TO USE THIS
-
-Copy each prompt **one at a time** into Google AI Studio (or Cursor / Replit AI).  
-Wait for the output before moving to the next prompt.  
-Each prompt builds directly on the previous one — don't skip.
-
 Tech Stack: **React + TypeScript + Vite + TailwindCSS + Express + Firebase + Gemini AI**
-
----
 
 ---
 
